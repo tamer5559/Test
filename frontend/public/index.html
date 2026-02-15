@@ -3,10 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React App</title>
+    <title>Mahzen Bot - Media Downloader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .platforms {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .platform-btn {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .platform-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .tiktok { background: #000; }
+        .instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .facebook { background: #1877f2; }
+        .twitter { background: #1da1f2; }
+
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .info {
+            background: #f0f4ff;
+            padding: 15px;
+            border-radius: 8px;
+            color: #333;
+            font-size: 13px;
+            line-height: 1.6;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div id="root"></div>
-    <script src="/static/js/bundle.js"></script>
+    <div class="container">
+        <h1>📱 Mahzen Bot</h1>
+        <p class="subtitle">Sosyal Medya İçerik İndiricisi</p>
+
+        <div class="platforms">
+            <button class="platform-btn tiktok">🎵 TikTok</button>
+            <button class="platform-btn instagram">📷 Instagram</button>
+            <button class="platform-btn facebook">👤 Facebook</button>
+            <button class="platform-btn twitter">🐦 Twitter</button>
+        </div>
+
+        <div class="input-section">
+            <input type="text" id="urlInput" placeholder="Video/Fotoğraf URL'sini yapıştırın...">
+        </div>
+
+        <button class="download-btn" id="downloadBtn">📥 İndir</button>
+
+        <div class="info">
+            ℹ️ Herhangi bir sosyal medya platformundan video, fotoğraf ve daha fazlasını indirin. 
+            Linki yapıştırın ve indir düğmesine basın!
+        </div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
